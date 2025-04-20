@@ -1,0 +1,67 @@
+:root,
+body,
+* {
+    /* font-family: "Iosvmata" !important; */
+    --k-width: 30px;
+}
+
+
+.inner {
+    position: relative;
+}
+
+.inner>.tabbar-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* We only care about left bar */
+#tabs-tabbar-container.left {
+    min-width:  var(--k-width) !important;
+    width: var(--k-width) !important;
+    height: 100%;
+    transition: width 150ms;
+
+    &:hover {
+        width: 150px !important;
+    }
+
+    .tab-strip {
+        &>span {
+            width: var(--k-width) !important;
+            display: block;
+        }
+    }
+
+    .tab-position {
+        background-color: var(--colorBg) !important;
+
+        .tab {
+
+            border-width: 0px !important;
+            padding-left: 0px !important;
+        }
+    }
+
+    /* fuck off with the resize bar*/
+    .SlideBar.SlideBar--FullHeight {
+        display: none;
+    }
+
+    .button-toolbar.newtab {
+        width: var(--k-width) !important;
+        left: 0 !important;
+    }
+
+}
+
+#tabs-container>div>div.toolbar.toolbar-tabbar.sync-and-trash-container.left.narrow {
+    display: none;
+}
+
+:not(:empty) + #webview-container {
+    left: 30px;
+}
+
